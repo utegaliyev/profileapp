@@ -6,7 +6,7 @@ import createHistory from 'history/createBrowserHistory';
 import {routerMiddleware, ConnectedRouter } from 'react-router-redux';
 import reducers from './reducers' // Or wherever you keep your reducers
 import routes from './routes';
-import Main from './Main';
+import Main from './containers/Main';
 
 import './App.css';
 // Create a history of your choosing (we're using a browser history in this case)

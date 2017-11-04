@@ -1,3 +1,8 @@
 .topMenuNavigation a{
     text-transform: uppercase;
 }
+
+.topMenuActive{
+    display: block;
+    border-bottom: 3px solid #fff;
+}

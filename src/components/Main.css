@@ -35,8 +35,12 @@
     list-style: none;
     margin: 0;
 }
-.dashboardPanel ul li, .dashboardPanel ul li>.material-icons{
+.dashboardPanel ul li button, .dashboardPanel ul li button>.material-icons{
     font-size: 13px;
-
+    text-transform: none;
+}
+.pageContent{
+    margin-left: 280px !important;
+    background-color: #EDEFF2;
 }
 

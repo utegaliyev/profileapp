@@ -3,18 +3,28 @@ import {Navigation} from 'react-mdl';
 import {Link} from 'react-router-dom';
 import './TopMenu.css';
 
-const TopMenu = () => (
-    <Navigation className="topMenuNavigation">
-        <Link to="/">Profile</Link>
-        <Link to="/portfolio">Portfolio</Link>
-        <Link to="/contacts">Contacts</Link>
-        <Link to="/address">Address</Link>
+const topMenuConfig = [
+    {path: '/', title: 'Profile'},
+    {path: '/portfolio', title: 'Portfolio'},
+    {path: '/contacts', title: 'Contacts'},
+    {path: '/address', title: 'Address'},
 
-        <Link to="/">Education</Link>
-        <Link to="/">Documents</Link>
-        <Link to="/">Availibility</Link>
-        <Link to="/">Billing</Link>
-    </Navigation>
-);
+    {path: '/education', title: 'Education'},
+    {path: '/documents', title: 'Documents'},
+    {path: '/availibility', title: 'Availibility'},
+    {path: '/billing', title: 'Billing'},
+];
+
+const TopMenu = ({pathname}) => {
+    return (
+        <Navigation className="topMenuNavigation">
+            {
+                topMenuConfig.map((item, index) =>
+                    <Link key={'menu'+index} className={item.path===pathname ? 'topMenuActive' : ''} to={item.path}>
+                        {item.title}
+                    </Link>)
+            }
+        </Navigation>);
+};
 
 export default TopMenu;
