@@ -1,8 +1,16 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {Route} from 'react-router-dom';
-import {Layout, Textfield, HeaderRow, Navigation, Header, Drawer, Content} from 'react-mdl';
+import {Layout, Textfield, HeaderRow, Header, Drawer, Content, IconButton, Icon , Badge, Button} from 'react-mdl';
 import TopMenu from './components/TopMenu';
+import ProjectsComponent from './components/ProjectsComponent';
+import MyIssuesComponent from './components/MyIssuesComponent';
+import TimeTrackingComponent from './components/TimeTrackingComponent';
+import MessagesComponent from './components/MessagesComponent';
+
+
+import image from './images.jpg';
+import './Main.css';
 
 class Main extends Component{
 
@@ -30,14 +38,26 @@ class Main extends Component{
                             <TopMenu/>
                         </HeaderRow>
                     </Header>
-                    <Drawer title="Title">
-                        
-                        <Navigation>
-                            <a href="#">Link1</a>
-                            <a href="#">Link2</a>
-                            <a href="#">Link3</a>
-                            <a href="#">Link4</a>
-                        </Navigation>
+                    <Drawer className="leftNav">
+                        <div className="leftNavTop">
+                            <Button className="profileTopAvatar">
+                                <img  src={image} alt="profile avatar" />
+                            </Button>
+                            <Button>
+                                <Badge text="1" overlap>
+                                    <Icon name="notifications" />
+                                </Badge>
+                            </Button>
+                            <IconButton  name="settings"/>
+                            <IconButton  name="exit_to_app"/>
+                        </div>
+                        <ProjectsComponent />
+                        <hr/>
+                        <MyIssuesComponent />
+                        <hr/>
+                        <TimeTrackingComponent/>
+                        <hr/>
+                        <MessagesComponent/>
                     </Drawer>
                     <Content>
                         <div className="page-content" >

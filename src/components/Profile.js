@@ -7,7 +7,7 @@ const ProfileComponent = ({profile}) => {
     return (<div className="profileWrapper">
         <div className="profileCard">
             <div>
-                <img src={image} className="profileImage"/>
+                <img src={image} className="profileImage" alt="profile avatar"/>
                 <IconButton name="edit" className="pull-right"/>
             </div>
             <h3>{profile.login}</h3>

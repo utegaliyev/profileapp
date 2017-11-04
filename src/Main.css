@@ -1,0 +1,42 @@
+.leftNav{
+
+    width: 280px !important;
+}
+.leftNavTop{
+    background-color: rgb(63,81,181);
+    height: 108px;
+    padding: 20px 0 0 10px;
+}
+.leftNavTop button{
+    color: #fff;
+    overflow: visible;
+}
+.profileTopAvatar{
+    height: 80px !important;
+}
+
+.profileTopAvatar img{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
+.leftNavBlockTitle i{
+    color: rgba(0,0,0, 0.54) ;
+}
+.leftNavBlockTitle{
+    font-weight: 500;
+    font-size: 13px;
+    display: block;
+    margin: 10px 0 0 10px;
+    text-transform: uppercase;
+}
+
+.dashboardPanel ul{
+    list-style: none;
+    margin: 0;
+}
+.dashboardPanel ul li, .dashboardPanel ul li>.material-icons{
+    font-size: 13px;
+
+}
+
