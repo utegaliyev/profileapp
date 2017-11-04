@@ -1,17 +1,23 @@
 import React, {Component} from 'react';
-import {Route, Link} from 'react-router-dom';
+import {connect} from 'react-redux';
+import {Route} from 'react-router-dom';
 import {Layout, Textfield, HeaderRow, Navigation, Header, Drawer, Content} from 'react-mdl';
 import TopMenu from './components/TopMenu';
 
 class Main extends Component{
 
     render (){
-        const {routes} = this.props;
+        const {routes, pathname} = this.props;
+        const filteredRoutes = routes.filter(item => item.path===pathname);
+        let headerTitle = '';
+        if(filteredRoutes.length===1){
+            headerTitle = filteredRoutes[0].title;
+        }
         return (
             <div className="demo-big-content">
                 <Layout fixedDrawer>
                     <Header >
-                        <HeaderRow title="Testst">
+                        <HeaderRow title={headerTitle}>
                             <Textfield
                                 value=""
                                 onChange={() => {}}
@@ -25,6 +31,7 @@ class Main extends Component{
                         </HeaderRow>
                     </Header>
                     <Drawer title="Title">
+                        
                         <Navigation>
                             <a href="#">Link1</a>
                             <a href="#">Link2</a>
@@ -48,4 +55,8 @@ class Main extends Component{
     }
 }
 
-export default Main;
+const mapStateToProps = (state) => {
+    return {pathname: state.router.location.pathname};
+};
+
+export default connect(mapStateToProps)(Main);
