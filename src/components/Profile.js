@@ -1,13 +1,19 @@
 import React from 'react';
-import {Button, IconButton} from 'react-mdl';
+import {Button, IconButton, Icon} from 'react-mdl';
 import MessageBoardComponent from  './MessageBoardComponent';
 
 import './Profile.css';
 import image from '../images.jpg';
 
-const ProfileComponent = ({profile, onClickReset, onClickMainEdit, onClickInfoEdit}) => {
+const ProfileComponent = ({profile, onClickReset, onClickMainEdit, onClickInfoEdit,
+                              messageBoardExpanded, messageBoardClick, dialogClicked}) => {
     return (
         <div className="profileComponent">
+            <div className="pull-right">
+                <MessageBoardComponent expanded={messageBoardExpanded}
+                                        onClick={messageBoardClick}
+                                       dialogClicked={dialogClicked}/>
+            </div>
             <div className="profileWrapper">
                 <div className="profileCard">
                     <div>
@@ -27,18 +33,18 @@ const ProfileComponent = ({profile, onClickReset, onClickMainEdit, onClickInfoEd
                         <dt>Email addresses</dt>
                         <dd>
                             <ul>
-                                {profile.emails.map((item, ind) => <li key={'email' + ind}>{item}</li>)}
+                                {profile.emails.map((item, ind) =>
+                                    <li key={'email' + ind}>
+                                        {item.value}<Icon name="check"/>
+                                    </li>)}
                             </ul>
                         </dd>
-
                     </dl>
                     <Button primary className="pull-right" onClick={onClickReset}>RESET PASSWORD</Button>
                     <div className="clear"/>
                 </div>
             </div>
-            <div className="pull-right">
-                <MessageBoardComponent/>
-            </div>
+
         </div>);
 };
 
@@ -48,7 +54,10 @@ ProfileComponent.defaultProps = {
         name: 'Alexander Litvin',
         company: 'Bachoo UX && UI desing',
         timezone: 'UTC+02:00',
-        emails: ['test1@mail.ru', 'test2@mail.ru']
+        emails: [
+            {value: 'test1@mail.ru', verified: true},
+            {value: 'test2@mail.ru', verified: false},
+        ]
     },
 };
 export default ProfileComponent;

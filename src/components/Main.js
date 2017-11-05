@@ -22,10 +22,10 @@ const Main = ({routes, pathname, projects, onProjectClick, issues, onIssueClick,
         headerTitle = filteredRoutes[0].title;
     }
     return (
-        <div className="demo-big-content">
+        <div className="bigContent">
             <Layout fixedDrawer>
                 <Header >
-                    <HeaderRow title={headerTitle}>
+                    <HeaderRow className="topHeaderRow" title={headerTitle}>
                         <Textfield
                             value=""
                             onChange={() => {}}
@@ -67,5 +67,5 @@ const Main = ({routes, pathname, projects, onProjectClick, issues, onIssueClick,
             </Layout>
         </div>
     );
-}
+};
 export default Main;

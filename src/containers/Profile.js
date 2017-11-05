@@ -1,8 +1,11 @@
 import {connect} from 'react-redux';
 import Profile  from '../components/Profile';
+import {messageBoardClick} from '../actions/message';
 
 const mapStateToProps = (state) => {
-    return {};
+    return {
+        messageBoardExpanded: state.message.boardExpanded,
+    };
 };
 
 const mapDispatchToProps = (dispatch) => {
@@ -16,7 +19,12 @@ const mapDispatchToProps = (dispatch) => {
         onClickInfoEdit: ()=>{
             alert('Additional edit clicked');
         },
-
+        dialogClicked: (user) => {
+            alert('Dialog with '+user.name +' clicked');
+        },
+        messageBoardClick: () => {
+            dispatch(messageBoardClick());
+        }
     };
 };
 

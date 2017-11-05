@@ -1,15 +1,14 @@
-.profileComponent{
-
-}
 .profileWrapper{
+    margin: 0 auto;
     width: 430px;
-    margin: 75px auto 0 auto;
 }
 .profileWrapper>div{
     box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
     padding: 10px;
+    background-color: #fff;
 }
 .profileCard{
+    margin-top: 100px;
     text-align: center;
     min-height: 0;
 }
@@ -21,6 +20,9 @@
     width: 100px;
     height: 100px;
     margin: -50px auto 0 auto;
+}
+.profileInfo{
+    margin: 10px 0;
 }
 .profileInfo dl dd{
     font-weight: 200;
@@ -37,6 +39,6 @@
     color: rgba(0,0,0, 0.54);
     font-size: 12px;
 }
-.profileCard, .profileInfo{
-    background-color: #fff;
+.profileInfo dl dd ul li>i{
+    color: green;
 }

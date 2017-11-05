@@ -1,5 +1,7 @@
+.topHeaderRow span{
+    margin: 0 40px;
+}
 .leftNav{
-
     width: 280px !important;
 }
 .leftNavTop{
