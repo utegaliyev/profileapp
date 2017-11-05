@@ -35,7 +35,8 @@ const ProfileComponent = ({profile, onClickReset, onClickMainEdit, onClickInfoEd
                             <ul>
                                 {profile.emails.map((item, ind) =>
                                     <li key={'email' + ind}>
-                                        {item.value}<Icon name="check"/>
+                                        {item.value}
+                                        {item.verified ? <Icon name="check"/> : ''}
                                     </li>)}
                             </ul>
                         </dd>
