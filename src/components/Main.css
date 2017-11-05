@@ -1,9 +1,6 @@
 .topHeaderRow span{
     margin: 0 40px;
 }
-.leftNav{
-    width: 280px !important;
-}
 .leftNavTop{
     background-color: rgb(63,81,181);
     height: 108px;
@@ -12,6 +9,7 @@
 .leftNavTop button{
     color: #fff;
     overflow: visible;
+    padding: 0;
 }
 .profileTopAvatar{
     height: 80px !important;
@@ -42,7 +40,6 @@
     text-transform: none;
 }
 .pageContent{
-    margin-left: 280px !important;
     background-color: #EDEFF2;
 }
 

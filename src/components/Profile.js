@@ -1,19 +1,12 @@
 import React from 'react';
 import {Button, IconButton, Icon} from 'react-mdl';
-import MessageBoardComponent from  './MessageBoardComponent';
 
 import './Profile.css';
 import image from '../images.jpg';
 
-const ProfileComponent = ({profile, onClickReset, onClickMainEdit, onClickInfoEdit,
-                              messageBoardExpanded, messageBoardClick, dialogClicked}) => {
+const ProfileComponent = ({profile, onClickReset, onClickMainEdit, onClickInfoEdit}) => {
     return (
         <div className="profileComponent">
-            <div className="pull-right">
-                <MessageBoardComponent expanded={messageBoardExpanded}
-                                        onClick={messageBoardClick}
-                                       dialogClicked={dialogClicked}/>
-            </div>
             <div className="profileWrapper">
                 <div className="profileCard">
                     <div>

@@ -9,11 +9,12 @@ import ProjectsComponent from './ProjectsComponent';
 import MyIssuesComponent from './MyIssuesComponent';
 import TimeTrackingComponent from './TimeTrackingComponent';
 import MessagesComponent from './MessagesComponent';
+import MessageBoardComponent from  './MessageBoardComponent';
 
 const Main = ({routes, pathname, projects, onProjectClick, issues, onIssueClick,
                   onStartClick, onLastTrackedClick,onClickDirect, onClickGroups, onClickChannels,
-                  notificationCount, onClickAvatar, onClickNotifications, onClickSettings, onClickExit
-
+                  notificationCount, onClickAvatar, onClickNotifications, onClickSettings, onClickExit,
+                  messageBoardExpanded, messageBoardClick, dialogClicked
               }) => {
 
     const filteredRoutes = routes.filter(item => item.path===pathname);
@@ -38,7 +39,7 @@ const Main = ({routes, pathname, projects, onProjectClick, issues, onIssueClick,
                         <TopMenu pathname={pathname}/>
                     </HeaderRow>
                 </Header>
-                <Drawer className="leftNav">
+                <Drawer>
                     <UserCorner notificationCount={notificationCount} onClickAvatar={onClickAvatar}
                                 onClickNotifications={onClickNotifications}
                                 onClickSettings={onClickSettings}
@@ -55,6 +56,11 @@ const Main = ({routes, pathname, projects, onProjectClick, issues, onIssueClick,
                                        onClickChannels={onClickChannels}/>
                 </Drawer>
                 <Content className="pageContent">
+                    <div className="pull-right">
+                        <MessageBoardComponent expanded={messageBoardExpanded}
+                                               onClick={messageBoardClick}
+                                               dialogClicked={dialogClicked}/>
+                    </div>
                     <div >
                         {
                             routes.map((item, index) => <Route key={'route'+index} exact={item.exact}
